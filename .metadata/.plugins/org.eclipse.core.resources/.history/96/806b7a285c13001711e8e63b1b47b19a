@@ -1,0 +1,44 @@
+package Lambda;
+
+import java.util.function.Supplier;
+
+public class DefaultAndStaticMethod {
+
+	private interface Defaulable1{
+		default String notReqired(){
+			return "Default1 implementation";
+		}
+	}
+	private static class Defaulable1Impl implements Defaulable1{
+		
+	}
+	private static class OverrideDefaulable1Impl implements Defaulable1{
+		return "OverrideDefaulable11Impl implementation";
+	}
+	//接口定义默认方法
+	private interface Defaulable{
+		default String notRequired(){
+			return "Default implementation";
+		}
+	}
+	
+	private static class DefaulableImpl implements Defaulable{
+		
+	}
+	
+	private static class OverrideDefaulableImpl implements Defaulable{
+		@Override
+		public String notRequired(){
+			return "OverrideDefaulableImpl implementation";
+		}
+	}
+	
+	private interface DefaulableFactory{
+		static<T> T create (Supplier<T> supplier){
+			return supplier.get();
+		}
+	}
+	public static void main(String[] args) {
+		
+	}
+}

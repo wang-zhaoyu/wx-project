@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       
+       <!-- 加载资源文件 
+       <context:property-placeholder location="classpath*:/***.conf" ignore-unresolvable="true"/>-->
+       
+       <!-- 配置扫描注解的范围 -->
+       <context:component-scan base-package="com.wx"/>
+       
+       
+	   <aop:aspectj-autoproxy proxy-target-class="true"/>
+	   
+	   
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="webBindingInitializer">
+            <bean class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+                <property name="conversionService">
+                    <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean"></bean>
+                </property>
+                <property name="validator" ref="validator"/>
+            </bean>
+        </property>
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>application/json; charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>application/json; charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+
+            </list>
+        </property>
+    </bean>
+    
+    
+    <!--支持处理@ExceptionHandler，去掉的话，则此注解不生效，另一种方式是配置mvc:annotation-driven，
+    此处因为同RequestMappingHandlerAdapter有冲突，mvc:annotation-driven不使用了（如果使用，则通过@ResponseBody直接返回的消息是
+    ISO-8895-1编码的，前端消息会是乱码）-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver"/>
+    
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="zh_CN"/>
+    </bean>
+    
+
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+    <!-- 定义拦截器，并声明拦截需要拦截的请求 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+        	<!-- 拦截所有请求 -->
+            <mvc:mapping path="/**"/>
+            <!-- 不拦截/view/匹配到的请求 -->
+            <mvc:exclude-mapping path="/view/**"/>
+            <bean class="com.wx.interceptor.TestInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    <!-- 文件上传设置 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="maxUploadSize" value="100000000"/>
+        <property name="maxInMemorySize" value="40960"/>
+    </bean>
+
+    <mvc:resources mapping="/view/**" location="/page/"/>
+       </beans>

@@ -1,0 +1,17 @@
+package com.wx.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.wx.model.User;
+import com.wx.service.UserService;
+@Service("userService")
+public class UserServiceImpl implements UserService{
+
+	public List<User> getUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.wx.dao;
+
+import java.util.List;
+
+public interface UserMapper {
+	
+	List<User> getUsers();
+
+}

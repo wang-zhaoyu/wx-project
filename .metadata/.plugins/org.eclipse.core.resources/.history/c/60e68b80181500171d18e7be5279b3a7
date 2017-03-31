@@ -1,0 +1,15 @@
+package com.wx.service.impl;
+
+import java.util.List;
+
+import com.wx.model.User;
+import com.wx.service.UserService;
+
+public class UserServiceImpl implements UserService{
+
+	public List<User> getUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,25 @@
+package Lambda;
+
+import java.util.function.Supplier;
+
+/**
+ * ¿‡–ÕÕ∆∂œ
+ * @author wangzhaoyu
+ *
+ */
+public class TypeInfer<T> {
+	public static TypeInfer create(Supplier<E>){
+		return 
+	}
+
+	public static<T> T defaultValue(){
+		return null;
+	}
+	
+	public T getOrDefault(T value,T defaultValue){
+		return value == null ? value : defaultValue;
+	}
+	public static void main(String[] args) {
+		final TypeInfer<String> infer = 
+	}
+}

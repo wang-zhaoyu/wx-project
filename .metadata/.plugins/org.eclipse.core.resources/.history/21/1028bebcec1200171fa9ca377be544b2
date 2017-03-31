@@ -1,0 +1,13 @@
+package Lambda;
+
+import java.util.List;
+
+public class ListIte {
+	public static void main(String[] args) {
+		List<String> lst = new ArrayList<String>();
+	}
+
+	private void pringList(List<String> list){
+		list.forEach(e -> System.out.println(e.toString() +"的长度为"+e.length()));
+	}
+}

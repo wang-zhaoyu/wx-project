@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="za_clsbss_serivce" logger="slf4j"/>
+	<dubbo:registry address="${dubbo.cheguo.cls.address}" protocol="zookeeper"/>
+	<dubbo:protocol name="dubbo" port="${dubbo.cheguo.cls.port}" />
+
+	<import resource="classpath*:dubbo-provider/*.xml" />
+	
+    <!-- 提供方应用信息，用于计算依赖关系 -->  
+    <dubbo:application name="wx_service"  />  
+	
+	<!-- 具体的实现bean  一般实际项目中 不会把bean写在dubbo配置中,例如采用注解开发时,通过扫描的方式把bean交给spring管理,这里不需要写,直接在dubbo-service引用就好-->  
+    <bean id="demoService" class="com.unj.dubbotest.provider.DemoServiceImpl" />  
+      
+   
+    <!-- 使用zookeeper注册中心暴露服务地址 -->  
+　　<!--实际项目中使用properties文件的形式定义zookeeper的地址 -->
+　　<--<dubbo:registry protocol="zookeeper" address="${zookeeper.address}"  check="false" file="dubbo.properties" />-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" protocol="zookeeper"/>   
+    
+    <!-- 用dubbo协议在20880端口暴露服务 -->  
+    <dubbo:protocol name="dubbo" port="20880" />  
+   
+    <!-- 声明需要暴露的服务接口 version是服务的版本号dubbo只找对应版本号的服务提供者进行调用 timeout 超时时间 超过时间过报错-->  
+    <dubbo:service interface="com.unj.dubbotest.provider.DemoService" ref="demoService" version="1.0" timeout="5000"/> 
+</beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.JSONObject"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.JSON"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.serializer.SerializeConfig"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.serializer.SimpleDateFormatSerializer"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.serializer.SerializerFeature"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.handler.HandlerInterceptorAdapter"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="com.alibaba.dubbo.container.Main"/>
+<fullyQualifiedTypeName name="java.awt.print.Printable"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="Lambda.DefaultAndStaticMethod"/>
+<fullyQualifiedTypeName name="Lambda.DefaultAndStaticMethod.DefaulableImpl"/>
+<fullyQualifiedTypeName name="Lambda.DefaultAndStaticMethod.OverrideDefaulableImpl"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.function.Supplier"/>
+<fullyQualifiedTypeName name="java.lang.annotation.Retention"/>
+<fullyQualifiedTypeName name="java.lang.annotation.RetentionPolicy"/>
+<fullyQualifiedTypeName name="java.lang.annotation.Target"/>
+<fullyQualifiedTypeName name="java.lang.annotation.ElementType"/>
+<fullyQualifiedTypeName name="Lambda.Annotations.NonEmpty"/>
+<fullyQualifiedTypeName name="Lambda.Annotations.Holder"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="org.dom4j.io.SAXReader"/>
+<fullyQualifiedTypeName name="org.dom4j.Document"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="org.dom4j.Element"/>
+<fullyQualifiedTypeName name="com.alibaba.dubbo.config.annotation.Service"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="com.wx.dao.UserMapper"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.wx.service.UserService"/>
+<fullyQualifiedTypeName name="com.wx.model.User"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.wangzhaoyu.wx_model.User"/>
+</qualifiedTypeNameHistroy>

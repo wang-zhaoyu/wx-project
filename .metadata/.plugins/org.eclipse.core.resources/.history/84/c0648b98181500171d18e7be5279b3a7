@@ -1,0 +1,20 @@
+package com.wx.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wx.dao.UserMapper;
+import com.wx.model.User;
+import com.wx.service.UserService;
+@Service("userService")
+public class UserServiceImpl implements UserService{
+
+	@Autowired
+	private UserMapper userMapepr
+	public List<User> getUser() {
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.wangzhaoyu.wx_api;
+
+public interface IUserService {
+
+}
