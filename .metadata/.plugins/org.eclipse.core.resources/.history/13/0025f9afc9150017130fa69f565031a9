@@ -27,7 +27,7 @@ public class TestController {
 	@RequestMapping("/t1")
 	public String t1() {
 		JSONObject resultJson = new JSONObject();
-		resultJson.put("result", "测试结果访问 ");
+		resultJson.put("result", "测试结果访问");
 		List<User> users = userService.getUser();
 		System.out.println(users.size());
 		users.forEach(u -> System.out.println(u.getName()));
