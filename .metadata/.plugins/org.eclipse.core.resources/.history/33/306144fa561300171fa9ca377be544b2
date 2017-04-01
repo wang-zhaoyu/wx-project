@@ -1,8 +1,0 @@
-package Lambda;
-
-public interface DefaulableFactory {
-
-	public static default create(){
-		
-	};
-}

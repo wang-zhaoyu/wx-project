@@ -1,8 +1,0 @@
-package Lambda;
-
-public class ListIte {
-
-	private void pringList(List<String>){
-		
-	}
-}

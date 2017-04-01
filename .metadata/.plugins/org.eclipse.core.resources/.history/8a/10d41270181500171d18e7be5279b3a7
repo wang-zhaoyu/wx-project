@@ -1,7 +1,0 @@
-package com.wx.service.impl;
-
-import com.wx.service.UserService;
-
-public class UserServiceImpl implements UserService{
-
-}
