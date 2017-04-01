@@ -26,7 +26,7 @@ public class TestController {
 	@ResponseBody
 	@RequestMapping("/t1")
 	public String t1() {
-		JSONObject resultJson = new JSONObject();
+		JSONObject resultJson = new JSONObject(); 
 		resultJson.put("result", "≤‚ ‘Ω·π˚∑√Œ  ");
 		List<User> users = userService.getUser();
 		System.out.println(users.size());
