@@ -7,6 +7,7 @@ import com.alibaba.dubbo.container.Main;
 public class Launcher {
 	private static volatile boolean running = true;
 
+	@SuppressWarnings("resource")
 	public static void main(String args[]) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "spring/applicationContext.xml" });
 		context.start();
