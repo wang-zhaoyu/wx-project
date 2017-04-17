@@ -31,6 +31,7 @@ public class TestController {
 		List<User> users = userService.getUser();
 		System.out.println(users.size());
 		users.forEach(u -> System.out.println(u.getName()));
+		resultJson.put("data", users.get(0));
 		SerializeConfig mapping = new SerializeConfig();
 		mapping.put(Date.class, new SimpleDateFormatSerializer(null)); // yyyy-MM-dd
 		return JSON.toJSONString(resultJson, mapping, SerializerFeature.WriteDateUseDateFormat,
