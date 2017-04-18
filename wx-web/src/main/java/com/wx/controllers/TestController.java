@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.serializer.SimpleDateFormatSerializer;
+import com.wangzhaoyu.aspect.api.LogAspect;
 import com.wangzhaoyu.wx_model.User;
 import com.wx.service.UserService;
 
@@ -25,6 +26,7 @@ public class TestController {
 
 	@ResponseBody
 	@RequestMapping("/t1")
+	@LogAspect(value="∫«∫«ﬂ’")
 	public String t1() {
 		JSONObject resultJson = new JSONObject(); 
 		resultJson.put("result", "≤‚ ‘Ω·π˚∑√Œ  ");
